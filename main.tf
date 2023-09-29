@@ -133,3 +133,13 @@ resource "google_project_iam_member" "byoc" {
   project = local.project_id
   role    = google_project_iam_custom_role.byoc.id
 }
+
+resource "time_sleep" "avoid_gcp_race" {
+  create_duration = "60s"
+
+  triggers = {
+    access_control = google_service_account_iam_policy.byoc.id
+    permissions    = google_project_iam_member.byoc.id
+    email          = google_service_account.byoc.email
+  }
+}

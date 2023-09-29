@@ -9,7 +9,7 @@ output "subnetwork_name" {
 }
 
 output "service_account_email" {
-  value       = google_service_account.byoc.email
+  value       = time_sleep.avoid_gcp_race.triggers["email"]
   description = "Email of the Service Account that has permissions to create resources in the project."
 }
 

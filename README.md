@@ -37,6 +37,7 @@ resource "doublecloud_network" "gcp" {
 | Name | Version |
 |------|---------|
 | <a name="provider_google"></a> [google](#provider\_google) | >= 4.44.1 |
+| <a name="provider_time"></a> [time](#provider\_time) | n/a |
 
 ## Modules
 
@@ -54,6 +55,7 @@ No modules.
 | [google_project_service.apis](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/project_service) | resource |
 | [google_service_account.byoc](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account) | resource |
 | [google_service_account_iam_policy.byoc](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account_iam_policy) | resource |
+| [time_sleep.avoid_gcp_race](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) | resource |
 | [google_iam_policy.access_control](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/iam_policy) | data source |
 
 ## Inputs
@@ -67,7 +69,7 @@ No modules.
 | <a name="input_ipv4_cidr"></a> [ipv4\_cidr](#input\_ipv4\_cidr) | Valid IPv4 CIDR block for VPC | `string` | `"10.10.0.0/16"` | no |
 | <a name="input_network_name"></a> [network\_name](#input\_network\_name) | Network name where create resources | `string` | n/a | yes |
 | <a name="input_project_id"></a> [project\_id](#input\_project\_id) | Project ID where to create resources | `string` | n/a | yes |
-| <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Display name for a new project | `string` | n/a | yes |
+| <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Display name for a new project | `string` | `""` | no |
 | <a name="input_region"></a> [region](#input\_region) | Region where create resources | `string` | n/a | yes |
 | <a name="input_role_id"></a> [role\_id](#input\_role\_id) | The camel case role ID to create | `string` | n/a | yes |
 | <a name="input_role_title"></a> [role\_title](#input\_role\_title) | A human-readable title for the role | `string` | n/a | yes |
