@@ -31,13 +31,14 @@ resource "doublecloud_network" "gcp" {
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.2.6 |
 | <a name="requirement_google"></a> [google](#requirement\_google) | >= 4.44.1 |
+| <a name="requirement_time"></a> [time](#requirement\_time) | >= 0.9.1 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
 | <a name="provider_google"></a> [google](#provider\_google) | >= 4.44.1 |
-| <a name="provider_time"></a> [time](#provider\_time) | n/a |
+| <a name="provider_time"></a> [time](#provider\_time) | >= 0.9.1 |
 
 ## Modules
 

@@ -29,15 +29,15 @@ resource "google_project" "project" {
 
 locals {
   # await project creation if need
-  _tmp_project = var.create_project ? google_project.project[0].project_id : var.project_id
+  tmp_project = var.create_project ? google_project.project[0].project_id : var.project_id
 
   # await APIs activation if need 
-  project_id = local._tmp_project != "" && var.activate_google_apis ? alltrue([for api in local.google_apis : (google_project_service.apis[api].id != "")]) : true ? local._tmp_project : ""
+  project_id = local.tmp_project != "" && var.activate_google_apis ? alltrue([for api in local.google_apis : (google_project_service.apis[api].id != "")]) : true ? local.tmp_project : ""
 }
 
 resource "google_project_service" "apis" {
   for_each = local.apis_to_activate
 
-  project = local._tmp_project
+  project = local.tmp_project
   service = each.value
 }
