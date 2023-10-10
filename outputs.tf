@@ -1,5 +1,5 @@
 output "network_name" {
-  value       = google_compute_network.byoc.name
+  value       = google_compute_network.doublecloud.name
   description = "Name of the created Network. DoubleCloud resources will be created in this Network."
 }
 

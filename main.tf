@@ -1,4 +1,4 @@
-resource "google_compute_network" "byoc" {
+resource "google_compute_network" "doublecloud" {
   name    = var.network_name
   project = local.project_id
 
@@ -10,7 +10,7 @@ resource "google_compute_network" "byoc" {
 
 resource "google_compute_subnetwork" "byoc" {
   name    = var.subnetwork_name
-  network = google_compute_network.byoc.name
+  network = google_compute_network.doublecloud.name
   region  = var.region
   project = local.project_id
 
