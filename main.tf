@@ -135,7 +135,7 @@ resource "google_project_iam_member" "byoc" {
 }
 
 resource "time_sleep" "avoid_gcp_race" {
-  create_duration = "60s"
+  create_duration = "120s"
 
   triggers = {
     access_control = google_service_account_iam_policy.byoc.id
