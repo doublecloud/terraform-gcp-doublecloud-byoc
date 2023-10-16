@@ -7,7 +7,22 @@ Terraform module which creates GCP resources to bring them into DoubleCloud.
 module "byoc" {
   source = "doublecloud/doublecloud-byoc/gcp"
 
-  ipv4_cidr = "196.168.42.0/24"
+  project_id           = var.gcp_project_id
+  project_name         = var.gcp_project_name
+  create_project       = true
+  billing_account      = var.gcp_billing_account
+  activate_google_apis = true
+  folder_id            = var.gcp_folder_id
+
+  network_name    = "doublecloud"
+  region          = var.region
+  subnetwork_name = "dc-${var.region}"
+  ipv4_cidr       = "196.168.42.0/24"
+
+  role_id                      = "dc-byoc"
+  role_title                   = "DoubleCloud BYOC"
+  service_account_id           = "dc-byoc"
+  service_account_display_name = "DoubleCloud BYOC"
 }
 
 resource "doublecloud_network" "gcp" {
