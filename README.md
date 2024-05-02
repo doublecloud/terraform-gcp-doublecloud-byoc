@@ -17,7 +17,7 @@ module "byoc" {
   network_name    = "doublecloud"
   region          = var.region
   subnetwork_name = "dc-${var.region}"
-  ipv4_cidr       = "196.168.42.0/24"
+  ipv4_cidr       = "192.168.42.0/24"
 
   role_id                      = "dc-byoc"
   role_title                   = "DoubleCloud BYOC"
