@@ -28,7 +28,7 @@ resource "google_service_account" "byoc" {
 
 data "google_iam_policy" "access_control" {
   binding {
-    members = ["serviceAccount:controlplane@byoa-doublecloud.iam.gserviceaccount.com"]
+    members = ["serviceAccount:${var.double_cloud_control_plane_service_account_email}"]
     role    = "roles/iam.serviceAccountTokenCreator"
   }
 }

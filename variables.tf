@@ -73,3 +73,9 @@ variable "role_title" {
   type        = string
   description = " A human-readable title for the role"
 }
+
+variable "double_cloud_control_plane_service_account_email" {
+  type = string
+  default = "controlplane@byoa-doublecloud.iam.gserviceaccount.com"
+  description = "leave as default"
+}

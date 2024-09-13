@@ -81,6 +81,7 @@ No modules.
 | <a name="input_activate_google_apis"></a> [activate\_google\_apis](#input\_activate\_google\_apis) | Activate Google APIs or not | `bool` | `true` | no |
 | <a name="input_billing_account"></a> [billing\_account](#input\_billing\_account) | Billing account where new project should be attached | `string` | `""` | no |
 | <a name="input_create_project"></a> [create\_project](#input\_create\_project) | Create new project for DoubleCloud | `bool` | `true` | no |
+| <a name="input_double_cloud_control_plane_service_account_email"></a> [double\_cloud\_control\_plane\_service\_account\_email](#input\_double\_cloud\_control\_plane\_service\_account\_email) | leave as default | `string` | `"controlplane@byoa-doublecloud.iam.gserviceaccount.com"` | no |
 | <a name="input_folder_id"></a> [folder\_id](#input\_folder\_id) | Folder ID where new project should be created | `string` | `null` | no |
 | <a name="input_ipv4_cidr"></a> [ipv4\_cidr](#input\_ipv4\_cidr) | Valid IPv4 CIDR block for VPC | `string` | `"10.10.0.0/16"` | no |
 | <a name="input_network_name"></a> [network\_name](#input\_network\_name) | Network name where create resources | `string` | n/a | yes |
